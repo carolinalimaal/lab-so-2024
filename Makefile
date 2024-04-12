@@ -19,6 +19,3 @@ run:
 # Clean executables 
 clean:
 	rm -f helloWorld main
-
-L:
-	clean helloWorld main 
