@@ -28,11 +28,8 @@ int main() {
     }
       
     // Runs the Hello World program for each process
-    else if (pid == 0) {
-      printf("Child process PID = %d\n", getpid()); // Prints the ID of the process
-      
+    else if (pid == 0) {    
       execl("./helloWorld", "./helloWorld", NULL); // Runs the Hello World program
-      
       printf("Exec failed.\n");
       return 0;
     }
@@ -42,10 +39,8 @@ int main() {
   for (int i = 0; i < processNumber; i++) {
     wait(NULL);
   }
-
-  printf("Parrent process PID = %d\n", getpid());
-  printf("All processes have finished.\n");
   execl("./helloWorld", "./helloWorld", NULL);
-  
+  printf("All processes have finished.\n");
+
   return 0;
 }
